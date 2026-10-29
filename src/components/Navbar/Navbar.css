@@ -1,0 +1,101 @@
+.navbar {
+  --navbar-height: 4.5rem;
+
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 20;
+  height: var(--navbar-height);
+  color: var(--color-white);
+  pointer-events: none;
+}
+
+.navbar__blur {
+  position: absolute;
+  inset: 0 0 -1.5rem;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navbar__blur-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.navbar__blur-layer:nth-child(1) {
+  -webkit-backdrop-filter: blur(0.5px);
+  backdrop-filter: blur(0.5px);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 25%, #000 50%, transparent 75%);
+  mask-image: linear-gradient(to top, transparent 0%, #000 25%, #000 50%, transparent 75%);
+}
+
+.navbar__blur-layer:nth-child(2) {
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  -webkit-mask-image: linear-gradient(to top, transparent 25%, #000 50%, #000 75%, transparent 100%);
+  mask-image: linear-gradient(to top, transparent 25%, #000 50%, #000 75%, transparent 100%);
+}
+
+.navbar__blur-layer:nth-child(3) {
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  -webkit-mask-image: linear-gradient(to top, transparent 50%, #000 75%, #000 100%, transparent 125%);
+  mask-image: linear-gradient(to top, transparent 50%, #000 75%, #000 100%, transparent 125%);
+}
+
+.navbar__blur-layer:nth-child(4) {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  -webkit-mask-image: linear-gradient(to top, transparent 75%, #000 100%);
+  mask-image: linear-gradient(to top, transparent 75%, #000 100%);
+}
+
+.navbar__goat,
+.navbar__menu {
+  position: absolute;
+  top: 50%;
+  color: var(--color-white);
+  pointer-events: auto;
+  transition: color 0.35s ease;
+}
+
+.navbar__goat.is-on-light,
+.navbar__menu.is-on-light {
+  color: var(--color-ink);
+}
+
+.navbar__goat {
+  visibility: hidden;
+  left: 50%;
+  width: 2.25rem;
+  margin: -1.164rem 0 0 -1.125rem;
+}
+
+.navbar__goat svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.navbar__menu {
+  right: var(--grid-margin);
+  padding: 0.625rem;
+  margin: -1.094rem -0.625rem 0 0;
+}
+
+.navbar__goat:focus-visible,
+.navbar__menu:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 0.25rem;
+}
+
+.navbar.is-menu-open .navbar__blur {
+  visibility: hidden;
+}
+
+.navbar.is-menu-open .navbar__icon {
+  color: var(--color-white);
+}
+
+.navbar.is-menu-open .navbar__goat {
+  pointer-events: none;
+}

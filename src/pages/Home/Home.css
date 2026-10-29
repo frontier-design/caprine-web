@@ -1,0 +1,39 @@
+.home {
+  overflow-x: clip;
+}
+
+.home section > :not(.contour) {
+  position: relative;
+}
+
+.home__intro {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    var(--color-ink) 18.07%,
+    var(--color-steel) 41.4%,
+    var(--color-mist) 62.3%,
+    var(--color-white) 82%
+  );
+}
+
+.home__line {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: var(--brand-line-x);
+  width: 0.5px;
+  height: 65.5%;
+  background: linear-gradient(180deg, var(--color-grey) 46%, transparent 100%);
+  pointer-events: none;
+  will-change: transform;
+}
+
+
+
+@media (max-width: 767px) {
+  .home__line {
+    height: 100svh;
+    background: linear-gradient(180deg, var(--color-grey) 30%, transparent 100%);
+  }
+}

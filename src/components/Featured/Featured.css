@@ -1,0 +1,108 @@
+.featured {
+  position: relative;
+  padding-bottom: clamp(4.5rem, 9.375vw, 7.5rem);
+}
+
+.featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(var(--grid-margin) + 4 * var(--grid-col) + 4 * var(--grid-gutter));
+  width: 0.5px;
+  height: min(66.1875rem, 100%);
+  background: linear-gradient(180deg, var(--color-grey) 46%, var(--color-white) 100%);
+}
+
+.featured__contour {
+  top: 28.36vw;
+}
+
+.featured__media {
+  grid-column: 5 / 13;
+  will-change: transform;
+  margin-right: calc(-1 * var(--grid-margin));
+}
+
+.featured__frame {
+  position: relative;
+  aspect-ratio: 830 / 800;
+  overflow: hidden;
+  background: var(--color-sky);
+}
+
+.featured__layer {
+  position: absolute;
+  top: -3.4%;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.featured__grid {
+  position: absolute;
+  top: -4%;
+  left: -4%;
+  width: 108%;
+  max-width: none;
+  height: 108%;
+  will-change: transform;
+}
+
+.featured__layer:last-child {
+  will-change: transform;
+}
+
+.featured__badge {
+  position: absolute;
+  will-change: transform;
+  top: 58.9%;
+  left: -23.25%;
+  width: 38.67%;
+  padding: 6.02% 5.18%;
+  border: var(--border-hairline);
+  border-radius: var(--radius-lg);
+  background: var(--color-glass-soft);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+}
+
+.featured__badge img {
+  width: 100%;
+  height: auto;
+}
+
+.featured__info {
+  grid-column: 5 / 13;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  max-width: calc(36.25rem + clamp(1.5rem, 3.125vw, 2.5rem));
+  margin-top: 2.125rem;
+  padding-left: clamp(1.5rem, 3.125vw, 2.5rem);
+}
+
+@media (max-width: 767px) {
+  .featured::before {
+    display: none;
+  }
+
+  .featured__media {
+    grid-column: 1 / -1;
+    margin-inline: calc(-1 * var(--grid-margin));
+  }
+
+  .featured__badge {
+    top: auto;
+    bottom: -2rem;
+    left: var(--grid-margin);
+    width: min(60%, 15rem);
+    padding: 1.75rem 1.5rem;
+  }
+
+  .featured__info {
+    grid-column: 1 / -1;
+    margin-top: 4rem;
+    padding-left: 0;
+  }
+}

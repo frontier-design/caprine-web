@@ -1,0 +1,36 @@
+.header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 10;
+  height: var(--header-logo-bottom);
+  pointer-events: none;
+}
+
+.header__line {
+  position: absolute;
+  top: calc(var(--header-logo-top) + 1.2857 * var(--header-logo-size));
+  left: 0;
+  right: 0;
+  height: 0.5px;
+  background: var(--color-grey);
+  will-change: transform;
+}
+
+.header__logo {
+  position: absolute;
+  pointer-events: auto;
+}
+
+.header__logo {
+  top: var(--header-logo-top);
+  will-change: transform;
+  left: calc(var(--brand-line-x) - 2.2325 * var(--header-logo-size));
+  z-index: 1;
+  font-size: var(--header-logo-size);
+}
+
+
+.header__logo:focus-visible {
+  outline: 1px solid var(--color-white);
+  outline-offset: 0.25rem;
+}

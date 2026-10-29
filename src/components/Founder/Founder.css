@@ -1,0 +1,69 @@
+.founder {
+  position: relative;
+  padding-top: clamp(2.5rem, 4.14vw, 3.3125rem);
+  background: linear-gradient(180deg, var(--color-white) 40%, var(--color-sand) 100%);
+}
+
+.founder__identity {
+  grid-column: 1 / 5;
+  grid-row: 1;
+  align-self: start;
+}
+
+.founder__name {
+  font-family: var(--font-synt);
+  font-size: clamp(2rem, 1.69rem + 1.31vw, 2.875rem);
+  font-weight: var(--font-weight-regular);
+  font-style: italic;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.founder__role {
+  font-size: clamp(1.125rem, 1.07rem + 0.23vw, 1.375rem);
+  line-height: 1.4545;
+  color: var(--color-grey);
+}
+
+.founder__company {
+  margin-left: 0.25em;
+  color: var(--color-ink);
+}
+
+.founder__lead {
+  grid-column: 5 / 13;
+  grid-row: 1;
+  text-indent: calc((100% + var(--grid-gutter)) / 8);
+}
+
+.founder__bio {
+  grid-column: 5 / 11;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1lh;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 1023px) {
+  .founder__bio {
+    grid-column: 5 / 13;
+  }
+}
+
+@media (max-width: 767px) {
+  .founder__identity,
+  .founder__lead,
+  .founder__bio {
+    grid-column: 1 / -1;
+  }
+
+  .founder__lead {
+    grid-row: 2;
+    margin-top: 2rem;
+  }
+
+  .founder__bio {
+    grid-row: 3;
+  }
+}

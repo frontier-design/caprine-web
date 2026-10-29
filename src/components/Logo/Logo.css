@@ -1,0 +1,71 @@
+.logo {
+  position: relative;
+  display: block;
+  width: 4.465em;
+  height: 2.714em;
+  color: var(--color-white);
+}
+
+.logo__goat {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1.162em;
+  height: auto;
+  margin-left: -0.581em;
+  transform-origin: 50% 0;
+}
+
+.logo__mark {
+  position: absolute;
+  top: 1.83em;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0;
+}
+
+.logo__rotor {
+  position: relative;
+  display: grid;
+  margin-left: -0.12em;
+  transform: rotate(-14.88deg);
+}
+
+.logo__word {
+  grid-area: 1 / 1;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+  -webkit-text-stroke: 0.014em currentColor;
+  font-size: 1em;
+  line-height: 0.607;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.logo__word--straight {
+  font-family: var(--font-synt);
+  opacity: 0;
+}
+
+.logo__word--turbo {
+  font-family: var(--font-synt-turbo);
+}
+
+.logo__tagline {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-top: 1.8em;
+  font-family: var(--font-monument);
+  font-size: 0.135em;
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}

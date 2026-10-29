@@ -1,0 +1,31 @@
+.step-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  height: 2.8125rem;
+  padding: 0.625rem 0.75rem;
+  border: var(--border-glass);
+  border-radius: var(--radius-sm);
+  background: var(--color-glass);
+  color: var(--color-white);
+  white-space: nowrap;
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+}
+
+.step-pill__number {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-grey);
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.step-pill__label {
+  line-height: 1;
+}

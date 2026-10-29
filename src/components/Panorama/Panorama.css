@@ -1,0 +1,60 @@
+.panorama {
+  position: relative;
+  overflow: hidden;
+}
+
+.panorama__scene {
+  position: relative;
+  left: 50%;
+  width: max(100%, 40rem);
+  aspect-ratio: 2.4 / 1;
+  transform: translateX(-50%);
+  background: var(--color-mist);
+}
+
+.panorama__layer {
+  position: absolute;
+  top: -30.4%;
+  left: 0;
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
+
+.panorama__grid {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  will-change: transform;
+}
+
+.panorama__layer {
+  will-change: transform;
+}
+
+.panorama__ridge {
+  position: absolute;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.panorama__ridge--summit {
+  top: 32%;
+  left: 40%;
+  right: 38%;
+}
+
+.panorama__ridge--shoulders {
+  top: 52%;
+  left: 24%;
+  right: 22%;
+}
+
+.panorama__ridge--base {
+  top: 74%;
+  left: 0;
+  right: 0;
+}

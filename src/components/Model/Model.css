@@ -1,0 +1,174 @@
+.model {
+  position: relative;
+  padding-bottom: clamp(2.5rem, 4.14vw, 3.3125rem);
+}
+
+.model__contour {
+  top: 11.75vw;
+  left: -8.18vw;
+  transform: rotate(-10.91deg);
+}
+
+.model__label {
+  grid-column: 1 / -1;
+}
+
+.model__heading {
+  grid-column: 1 / 9;
+  margin-top: 2.1875rem;
+}
+
+.model__stage {
+  grid-column: 1 / -1;
+  aspect-ratio: 1181 / 445;
+  margin-top: clamp(4rem, 8.36vw, 6.6875rem);
+}
+
+.model__card {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 0.5px solid var(--color-line);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(180deg, var(--color-ink) 0%, var(--color-sky) 58.989%, var(--color-fog) 117.98%);
+  box-shadow: 0 0.8125rem 2.475rem rgba(0, 0, 0, 0.1);
+}
+
+.model__lines {
+  position: absolute;
+  top: -39.5%;
+  left: -17.47%;
+  width: 97.33%;
+  max-width: none;
+  height: auto;
+  transform: rotate(15.69deg);
+  will-change: transform;
+}
+
+.model__steps {
+  position: absolute;
+  inset: 0;
+}
+
+.model__step {
+  position: absolute;
+}
+
+.model__step--1 {
+  top: -3.82%;
+  left: 5.84%;
+}
+
+.model__step--2 {
+  top: 14.38%;
+  left: 36.07%;
+}
+
+.model__step--3 {
+  top: 42.92%;
+  left: 22.27%;
+}
+
+.model__step--4 {
+  top: 55.96%;
+  left: 58.85%;
+}
+
+.model__step--5 {
+  top: 79.78%;
+  left: 76.97%;
+}
+
+@media (max-width: 1023px) {
+  .model__heading {
+    grid-column: 1 / -1;
+  }
+
+  .model__stage {
+    aspect-ratio: 5 / 4;
+    margin-top: 3rem;
+  }
+
+  .model__lines {
+    top: -11%;
+    left: -15%;
+    width: 120%;
+  }
+
+  .model__step--1 {
+    top: 8%;
+    left: 6%;
+  }
+
+  .model__step--2 {
+    top: 26%;
+    left: auto;
+    right: 6%;
+  }
+
+  .model__step--3 {
+    top: 44%;
+    left: 12%;
+  }
+
+  .model__step--4 {
+    top: 62%;
+    left: auto;
+    right: 12%;
+  }
+
+  .model__step--5 {
+    top: 80%;
+    left: 22%;
+  }
+}
+
+@media (max-width: 767px) {
+  .model__stage {
+    --pill-half: 1.40625rem;
+
+    aspect-ratio: 20 / 21;
+    margin-top: calc(3rem + var(--pill-half));
+    margin-bottom: var(--pill-half);
+  }
+
+  .model__lines {
+    top: 2.7%;
+    left: -74.6%;
+    width: 174%;
+    transform: none;
+  }
+
+  .model__step {
+    left: auto;
+    right: auto;
+  }
+
+  .model__step--1 {
+    top: 0;
+    left: 21%;
+    margin-top: calc(-1 * var(--pill-half));
+  }
+
+  .model__step--2 {
+    top: 22%;
+    left: 4.5%;
+  }
+
+  .model__step--3 {
+    top: 43%;
+    right: 6%;
+  }
+
+  .model__step--4 {
+    top: 64%;
+    left: 14%;
+  }
+
+  .model__step--5 {
+    top: 100%;
+    right: 10%;
+    margin-top: calc(-1 * var(--pill-half));
+  }
+
+}

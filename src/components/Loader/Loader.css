@@ -1,0 +1,48 @@
+.is-loading,
+.is-loading body {
+  overflow: hidden;
+}
+
+.loader-veil {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  background: var(--color-white);
+  pointer-events: none;
+}
+
+.loader-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 11;
+  pointer-events: none;
+}
+
+.loader-stage__layer {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.loader-stage__layer--ink {
+  color: var(--color-ink);
+}
+
+.loader-stage__layer--light {
+  color: var(--color-white);
+}
+
+.loader-stage .loader-stage__logo {
+  color: inherit;
+  font-size: clamp(3.25rem, 7.2vw, 7rem);
+}
+
+.is-loading .home__line,
+.is-loading .hero__contour {
+  z-index: 6;
+}
+
+.is-loading .hero__content {
+  z-index: 7;
+}

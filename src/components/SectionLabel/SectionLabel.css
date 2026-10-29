@@ -1,0 +1,22 @@
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4375rem;
+}
+
+.section-label::before {
+  content: '';
+  flex: none;
+  width: 0.6875rem;
+  height: 0.6875rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.section-label--light {
+  color: var(--color-white);
+}
+
+.section-label--dark {
+  color: var(--color-ink);
+}

@@ -1,0 +1,48 @@
+.contour {
+  --contour-dash: 1.0106vw;
+  --contour-period: 2.0213vw;
+
+  position: absolute;
+  left: -9.92vw;
+  width: 117.19vw;
+  height: 31.285vw;
+  pointer-events: none;
+  user-select: none;
+}
+
+.contour__axis {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 121.28vw;
+  height: 0;
+  transform: rotate(-14.93deg);
+  transform-origin: 0 0;
+}
+
+.contour__dashes {
+  position: absolute;
+  top: -0.25px;
+  left: calc(-1 * var(--contour-period));
+  width: calc(100% + var(--contour-period));
+  height: 0.5px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-grey) 0 var(--contour-dash),
+    transparent var(--contour-dash) var(--contour-period)
+  );
+  animation: contour-march var(--contour-duration, 1.6s) linear infinite;
+  will-change: transform;
+}
+
+@keyframes contour-march {
+  to {
+    transform: translateX(var(--contour-period));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contour__dashes {
+    animation: none;
+  }
+}
