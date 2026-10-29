@@ -1,5 +1,6 @@
 import agoraSky from '../../assets/images/agora-sky.webp'
-import agoraGrid from '../../assets/images/agora-grid.svg'
+import agoraGridDashes from '../../assets/images/agora-grid-dashes.svg'
+import agoraGridStatic from '../../assets/images/agora-grid-static.svg'
 import agoraMountain from '../../assets/images/agora-mountain.webp'
 import agoraLogo from '../../assets/images/agora-logo.svg'
 import { useRef } from 'react'
@@ -39,7 +40,10 @@ function Featured() {
       <div className="featured__media" data-nav-theme="dark" ref={mediaRef}>
         <div className="featured__frame">
           <img className="featured__layer" src={agoraSky} alt="" loading="lazy" />
-          <img className="featured__grid" src={agoraGrid} alt="" aria-hidden="true" />
+          <div className="featured__grid" aria-hidden="true">
+            <img className="featured__grid-static" src={agoraGridStatic} alt="" />
+            <img className="featured__grid-dashes" src={agoraGridDashes} alt="" />
+          </div>
           <img
             className="featured__layer"
             src={agoraMountain}

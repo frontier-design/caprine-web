@@ -46,6 +46,21 @@
   );
 }
 
+.testimonials__window.is-animated .testimonials__column {
+  cursor: grab;
+}
+
+.testimonials__window.is-dragging,
+.testimonials__window.is-dragging .testimonials__column {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.testimonials__window:focus-visible {
+  outline: 1px solid var(--color-grey);
+  outline-offset: 0.5rem;
+}
+
 .testimonials__window.is-animated {
   overflow: hidden;
 }

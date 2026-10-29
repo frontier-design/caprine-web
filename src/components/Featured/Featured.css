@@ -48,6 +48,24 @@
   will-change: transform;
 }
 
+.featured__grid-static,
+.featured__grid-dashes {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.featured__grid-static {
+  top: 0;
+  height: 100%;
+}
+
+.featured__grid-dashes {
+  top: 12.5%;
+  height: 65.5%;
+  will-change: transform;
+}
+
 .featured__layer:last-child {
   will-change: transform;
 }

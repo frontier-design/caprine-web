@@ -2,7 +2,8 @@ import { useRef } from 'react'
 import { gsap, useGSAP } from '../../lib/gsap'
 import { MOTION_OK, parallax } from '../../lib/parallax'
 import mountainFull from '../../assets/images/mountain-full.webp'
-import rangeGrid from '../../assets/images/range-grid.svg'
+import rangeGridDashes from '../../assets/images/range-grid-dashes.svg'
+import rangeGridStatic from '../../assets/images/range-grid-static.svg'
 import mountainOnly from '../../assets/images/mountain-only.webp'
 import './Panorama.css'
 
@@ -30,7 +31,10 @@ function Panorama() {
     <div className="panorama" data-nav-theme="light" ref={panoramaRef}>
       <div className="panorama__scene">
         <img className="panorama__layer" src={mountainFull} alt="" loading="lazy" />
-        <img className="panorama__grid" src={rangeGrid} alt="" aria-hidden="true" />
+        <div className="panorama__grid" aria-hidden="true">
+          <img className="panorama__grid-layer" src={rangeGridStatic} alt="" />
+          <img className="panorama__grid-layer panorama__grid-layer--dashes" src={rangeGridDashes} alt="" />
+        </div>
         <span className="panorama__ridge panorama__ridge--summit" data-nav-theme="dark" aria-hidden="true" />
         <span className="panorama__ridge panorama__ridge--shoulders" data-nav-theme="dark" aria-hidden="true" />
         <span className="panorama__ridge panorama__ridge--base" data-nav-theme="dark" aria-hidden="true" />

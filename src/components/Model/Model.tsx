@@ -1,5 +1,5 @@
-import { useRef } from 'react'
-import modelLines from '../../assets/images/model-lines.svg'
+import { useRef, type CSSProperties } from 'react'
+import modelLinesStatic from '../../assets/images/model-lines-static.svg'
 import { gsap, useGSAP } from '../../lib/gsap'
 import { MOTION_OK, parallax } from '../../lib/parallax'
 import Contour from '../Contour/Contour'
@@ -16,6 +16,17 @@ const steps = [
 ]
 
 const PILL_DEPTHS = [0.05, 0.085, 0.035, 0.07, 0.045]
+
+const DASHED_LINES = [
+  { x: 511.699, y: 671.504, length: 757.87, angle: -41.611, dash: 4.986, duration: 1.8 },
+  { x: 491.704, y: 713.474, length: 757.88, angle: -41.611, dash: 4.986, duration: 1.3 },
+  { x: 472.033, y: 754.778, length: 757.88, angle: -41.611, dash: 4.986, duration: 2.6 },
+  { x: 452.042, y: 796.747, length: 757.87, angle: -41.611, dash: 4.986, duration: 0.8 },
+  { x: 432.375, y: 838.052, length: 757.88, angle: -41.611, dash: 4.986, duration: 1.5 },
+  { x: 412.376, y: 880.024, length: 758.55, angle: -41.633, dash: 4.99, duration: 1.1 },
+  { x: 392.712, y: 921.319, length: 757.87, angle: -41.611, dash: 4.986, duration: 2.2 },
+  { x: 372.72, y: 963.291, length: 758.55, angle: -41.633, dash: 4.99, duration: 0.9 },
+]
 
 function Model() {
   const stageRef = useRef<HTMLDivElement>(null)
@@ -50,7 +61,27 @@ function Model() {
       </h2>
       <div className="model__stage" data-nav-theme="dark" ref={stageRef}>
         <div className="model__card" aria-hidden="true">
-          <img className="model__lines" src={modelLines} alt="" />
+          <div className="model__lines">
+            <img className="model__lines-static" src={modelLinesStatic} alt="" />
+            {DASHED_LINES.map(({ x, y, length, angle, dash, duration }) => (
+              <span
+                className="model__dash-line"
+                key={y}
+                style={
+                  {
+                    '--x': x,
+                    '--y': y,
+                    '--length': length,
+                    '--angle': `${angle}deg`,
+                    '--dash': dash,
+                    '--duration': `${duration}s`,
+                  } as CSSProperties
+                }
+              >
+                <span className="model__dash-strip" />
+              </span>
+            ))}
+          </div>
         </div>
         <ol className="model__steps">
           {steps.map((label, index) => (
