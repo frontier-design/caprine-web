@@ -8,6 +8,7 @@ import { gsap, useGSAP } from '../../lib/gsap'
 import { MEDIA_DRIFT, MOTION_OK, parallax } from '../../lib/parallax'
 import Contour from '../Contour/Contour'
 import GlassButton from '../GlassButton/GlassButton'
+import SectionLabel from '../SectionLabel/SectionLabel'
 import './Featured.css'
 
 function Featured() {
@@ -17,7 +18,7 @@ function Featured() {
     () => {
       const mm = gsap.matchMedia()
 
-      mm.add(MOTION_OK, () => {
+      mm.add(`${MOTION_OK} and (min-width: 768px)`, () => {
         const media = mediaRef.current
         const section = media?.closest('.featured')
         const grid = media?.querySelector('.featured__grid')
@@ -37,6 +38,9 @@ function Featured() {
   return (
     <section className="featured grid" id="portfolio" data-nav-theme="light" aria-label="Featured company: AGORA SecureWare">
       <Contour className="featured__contour" duration={1.1} />
+      <SectionLabel className="featured__label" tone="light">
+        Portfolio
+      </SectionLabel>
       <div className="featured__media" data-nav-theme="dark" ref={mediaRef}>
         <div className="featured__frame">
           <img className="featured__layer" src={agoraSky} alt="" loading="lazy" />

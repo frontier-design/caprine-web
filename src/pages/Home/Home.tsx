@@ -17,6 +17,7 @@ const REVEAL_TARGETS = [
   '.about__label',
   '.about__body p',
   '.about__statement',
+  '.featured__label',
   '.featured__info > *',
   '.model__label',
   '.model__heading',
