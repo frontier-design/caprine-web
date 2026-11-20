@@ -26,7 +26,8 @@ const REVEAL_TARGETS = [
   '.founder__identity > *',
   '.founder__lead',
   '.founder__bio p',
-  '.footer__email',
+  '.footer__label',
+  '.footer__text',
 ].join(', ')
 
 const REVEAL_DURATION = 1.1

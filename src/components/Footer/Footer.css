@@ -6,9 +6,38 @@
   background: linear-gradient(180deg, var(--color-sand) 0%, var(--color-earth) 70%, var(--color-ink) 100%);
 }
 
-.footer__email {
+.footer__label {
+  grid-column: 1 / 5;
+  align-self: start;
+  padding-top: 0.25rem;
+}
+
+.footer__text {
   grid-column: 5 / 13;
-  justify-self: start;
+  text-indent: calc((100% + var(--grid-gutter)) / 8);
+}
+
+.footer__email {
+  display: inline-block;
+  text-indent: 0;
+  white-space: nowrap;
+  -webkit-hyphens: none;
+  hyphens: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+  transition: text-decoration-color 0.6s var(--ease-out), opacity 0.6s var(--ease-out);
+}
+
+.footer__email:hover,
+.footer__email:focus-visible {
+  text-decoration-color: var(--color-white);
+}
+
+.footer__email:focus-visible {
+  outline: 1px solid var(--color-white);
+  outline-offset: 0.25rem;
 }
 
 .footer__brand {
@@ -39,8 +68,14 @@
 }
 
 @media (max-width: 767px) {
-  .footer__email {
+  .footer__label,
+  .footer__text {
     grid-column: 1 / -1;
+  }
+
+  .footer__text {
+    margin-top: 1.5rem;
+    text-indent: 0;
   }
 
   .footer__goat {
