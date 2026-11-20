@@ -78,23 +78,47 @@
   margin-top: clamp(1.5rem, 3.125vw, 2.5rem);
 }
 
-.featured__badge {
-  position: absolute;
-  will-change: transform;
-  top: 58.9%;
-  left: -23.25%;
-  width: 38.67%;
-  padding: 6.02% 5.18%;
-  border: var(--border-hairline);
-  border-radius: var(--radius-lg);
-  background: var(--color-glass-soft);
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  backdrop-filter: blur(var(--glass-blur));
+.featured__heading {
+  max-width: 36rem;
 }
 
-.featured__badge img {
-  width: 100%;
-  height: auto;
+.featured__route {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.featured__route-step {
+  position: absolute;
+}
+
+.featured__route .step-pill {
+  background: rgba(33, 33, 33, 0.32);
+}
+
+.featured__route-step--1 {
+  top: 8%;
+  left: -7%;
+}
+
+.featured__route-step--2 {
+  top: 26%;
+  left: 47%;
+}
+
+.featured__route-step--3 {
+  top: 45%;
+  left: -4%;
+}
+
+.featured__route-step--4 {
+  top: 64%;
+  left: 42%;
+}
+
+.featured__route-step--5 {
+  top: 83%;
+  left: -8%;
 }
 
 .featured__info {
@@ -113,9 +137,10 @@
     display: none;
   }
 
-  .featured__label {
+  .featured .featured__label {
     grid-column: 1 / -1;
     z-index: 2;
+    color: var(--color-white);
     margin-top: var(--grid-margin);
   }
 
@@ -125,17 +150,37 @@
     margin-inline: calc(-1 * var(--grid-margin));
   }
 
-  .featured__badge {
-    top: auto;
-    bottom: -2rem;
+
+  .featured__route-step--1 {
+    top: 15%;
     left: var(--grid-margin);
-    width: min(60%, 15rem);
-    padding: 1.75rem 1.5rem;
+  }
+
+  .featured__route-step--2 {
+    top: 31%;
+    left: auto;
+    right: var(--grid-margin);
+  }
+
+  .featured__route-step--3 {
+    top: 47%;
+    left: calc(var(--grid-margin) + 4%);
+  }
+
+  .featured__route-step--4 {
+    top: 63%;
+    left: auto;
+    right: calc(var(--grid-margin) + 4%);
+  }
+
+  .featured__route-step--5 {
+    top: 79%;
+    left: calc(var(--grid-margin) + 10%);
   }
 
   .featured__info {
     grid-column: 1 / -1;
-    margin-top: 4rem;
+    margin-top: 2rem;
     padding-left: 0;
   }
 }

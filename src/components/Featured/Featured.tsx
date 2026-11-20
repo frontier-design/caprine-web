@@ -2,14 +2,23 @@ import agoraSky from '../../assets/images/agora-sky.webp'
 import agoraGridDashes from '../../assets/images/agora-grid-dashes.svg'
 import agoraGridStatic from '../../assets/images/agora-grid-static.svg'
 import agoraMountain from '../../assets/images/agora-mountain.webp'
-import agoraLogo from '../../assets/images/agora-logo.svg'
 import { useRef } from 'react'
 import { gsap, useGSAP } from '../../lib/gsap'
 import { MEDIA_DRIFT, MOTION_OK, parallax } from '../../lib/parallax'
 import Contour from '../Contour/Contour'
-import GlassButton from '../GlassButton/GlassButton'
 import SectionLabel from '../SectionLabel/SectionLabel'
+import StepPill from '../StepPill/StepPill'
 import './Featured.css'
+
+const STEPS = [
+  'Identify the Challenge',
+  'Partner with Founders',
+  'Secure Partnerships (POV)',
+  'Scale go-to-market',
+  'Resilience Execution',
+]
+
+const STEP_DEPTHS = [0.02, 0.045, 0.03, 0.06, 0.04]
 
 function Featured() {
   const mediaRef = useRef<HTMLDivElement>(null)
@@ -22,12 +31,14 @@ function Featured() {
         const media = mediaRef.current
         const section = media?.closest('.featured')
         const grid = media?.querySelector('.featured__grid')
-        const badge = media?.querySelector('.featured__badge')
-        if (!media || !section || !grid || !badge) return
+        if (!media || !section || !grid) return
 
         parallax(media, { trigger: section, from: MEDIA_DRIFT, to: -MEDIA_DRIFT })
         parallax(grid, { trigger: section, from: -0.025, to: 0.025 })
-        parallax(badge, { trigger: section, from: 0.1, to: -0.1 })
+        gsap.utils.toArray<HTMLElement>('.step-pill', media).forEach((pill, index) => {
+          const amount = STEP_DEPTHS[index] ?? 0.04
+          parallax(pill, { trigger: section, from: amount, to: -amount })
+        })
       })
 
       return () => mm.revert()
@@ -36,10 +47,10 @@ function Featured() {
   )
 
   return (
-    <section className="featured grid" id="portfolio" data-nav-theme="light" aria-label="Featured company: AGORA SecureWare">
+    <section className="featured grid" id="model" data-nav-theme="light" aria-labelledby="model-heading">
       <Contour className="featured__contour" duration={1.1} />
       <SectionLabel className="featured__label" tone="light">
-        Portfolio
+        Our model
       </SectionLabel>
       <div className="featured__media" data-nav-theme="dark" ref={mediaRef}>
         <div className="featured__frame">
@@ -55,20 +66,19 @@ function Featured() {
             loading="lazy"
           />
         </div>
-        <div className="featured__badge">
-          <img src={agoraLogo} alt="AGORA" width={234} height={52} />
-        </div>
+        <ol className="featured__route" aria-label="Our model in five steps">
+          {STEPS.map((step, index) => (
+            <li className={`featured__route-step featured__route-step--${index + 1}`} key={step}>
+              <StepPill step={index + 1} label={step} />
+            </li>
+          ))}
+        </ol>
       </div>
       <div className="featured__info">
-        <p className="paragraph">
-          AGORA SecureWare is a Swiss software company, founded in 2007 and based in Bioggio, that provides
-          secure data rooms for confidential document exchange and stakeholder collaboration, mainly for
-          finance, legal, and corporate clients. Its main product is the AGORA Trust Room, which is Swiss-made
-          and hosted in an ISO 27001-certified, GDPR-compliant data centre in Switzerland.
-        </p>
-        <GlassButton href="https://www.agora-secureware.com/" external withDot>
-          More Detail
-        </GlassButton>
+        <h2 className="featured__heading sub-title" id="model-heading">
+          We help founders build resilient companies through access to global markets, talent and strategic
+          resources.
+        </h2>
       </div>
     </section>
   )

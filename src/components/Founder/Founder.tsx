@@ -27,7 +27,7 @@ function Founder() {
           Sysmosoft SA (acquired by Swiss Post), SecureMisr (acquired by Trend Micro), and CIT Global.
         </p>
         <p>
-          He currently serves as Chairman of AGORA SecureWare and Swiss Growth Investment and provides
+          He currently serves as Founder of Caprine and Chairman of AGORA SecureWare and provides
           strategic guidance and investment to several technology companies, including Anapaya.
         </p>
         <p>

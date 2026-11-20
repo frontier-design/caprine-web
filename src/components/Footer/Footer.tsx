@@ -26,8 +26,8 @@ function Footer() {
 
   return (
     <footer ref={footerRef} className="footer grid" id="contact" role="contentinfo" data-nav-theme="light">
-      <GlassButton className="footer__email" href="mailto:info@caprine.ca" variant="bare" withDot>
-        info@caprine.ca
+      <GlassButton className="footer__email" href="mailto:info@caprine.io" variant="bare" withDot>
+        info@caprine.io
       </GlassButton>
       <div className="footer__brand" aria-hidden="true" data-nav-theme="dark">
         <img className="footer__goat" src={goat} alt="" width={48} height={50} />

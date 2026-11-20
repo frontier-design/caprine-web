@@ -12,8 +12,8 @@ type MenuProps = {
 
 const LINKS = [
   { label: 'About', href: '#about' },
-  { label: 'Portfolio', href: '#portfolio' },
   { label: 'Our model', href: '#model' },
+  { label: 'Portfolio', href: '#portfolio' },
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'Founder', href: '#founder' },
   { label: 'Contact', href: '#contact' },
@@ -30,7 +30,7 @@ const scrollTopFor = (href: string, calm: boolean) => {
   if (!target) return null
   const top = target.getBoundingClientRect().top + window.scrollY
 
-  if (href !== '#portfolio') return top - parseFloat(getComputedStyle(target).scrollMarginTop)
+  if (href !== '#model') return top - parseFloat(getComputedStyle(target).scrollMarginTop)
 
   const drift = calm ? 0 : depth(MEDIA_DRIFT)()
   const travel = window.innerHeight + target.offsetHeight
@@ -149,8 +149,8 @@ function Menu({ isOpen, onClose }: MenuProps) {
       </div>
 
       <div className="menu__footer grid">
-        <GlassButton className="menu__reveal menu__email" href="mailto:info@caprine.ca" variant="bare" withDot>
-          info@caprine.ca
+        <GlassButton className="menu__reveal menu__email" href="mailto:info@caprine.io" variant="bare" withDot>
+          info@caprine.io
         </GlassButton>
       </div>
     </div>

@@ -4,14 +4,14 @@ import { EASE_OUT, gsap } from '../../lib/gsap'
 import './TestimonialCard.css'
 
 type TestimonialCardProps = {
-  testimonial: Testimonial
+  testimonial: Testimonial & { quote: string }
   isClone?: boolean
 }
 
 const WORD_LIMIT = 45
 
 function TestimonialCard({ testimonial, isClone = false }: TestimonialCardProps) {
-  const { firstName, lastName, role, company, quote } = testimonial
+  const { firstName, lastName, title, quote } = testimonial
   const cardRef = useRef<HTMLLIElement>(null)
   const startHeightRef = useRef<number | null>(null)
   const [isExpanded, setIsExpanded] = useState(false)
@@ -51,9 +51,7 @@ function TestimonialCard({ testimonial, isClone = false }: TestimonialCardProps)
             <br />
             {lastName}
           </span>
-          <span className="testimonial-card__role paragraph">
-            {role} at <span className="testimonial-card__company">{company}</span>
-          </span>
+          {title && <span className="testimonial-card__role paragraph">{title}</span>}
         </figcaption>
         <blockquote className="testimonial-card__quote paragraph">
           <p>

@@ -23,13 +23,12 @@
 }
 
 .testimonial-card__role {
-  line-height: 1.4667;
+  margin-top: 0.5rem;
+  font-size: var(--caption-font-size);
+  line-height: var(--caption-line-height);
   color: var(--color-grey);
 }
 
-.testimonial-card__company {
-  color: var(--color-ink);
-}
 
 .testimonial-card__quote {
   -webkit-hyphens: auto;
