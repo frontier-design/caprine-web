@@ -59,7 +59,7 @@ const columns: Testimonial[][] = [
         'Nagi and I first met in 2012. Even then, I admired his achievements. His motivational character, his open-minded personality, and his extremely large global business network amazed me from the start. He is not just persuasive — he also delivers what he promises. His ability to open doors that would otherwise stay closed is extraordinary. With Nagi, you can always count on him being well informed and giving guiding feedback. Over the last few years, I have enjoyed discussing opportunities and projects with him, and I plan to keep working with him.',
     },
     {
-      firstName: 'Julian',
+      firstName: 'Julien',
       lastName: 'Probst',
       quote:
         'I have worked closely with Nagi across two successful exits in cybersecurity. He is a passionate company builder who truly understands technology, products, and what it takes to grow a business globally. He values talented people, strong execution, and real innovation. Beyond that, Nagi has a unique ability to bring people together, open doors through his global network, and get things done.',
@@ -68,6 +68,8 @@ const columns: Testimonial[][] = [
       firstName: 'Davis',
       lastName: 'Hake',
       title: 'Senior Director of Cybersecurity Services, Venable LLP',
+      quote:
+        'Nagi has a proven track record of identifying exceptional talent, uniting experts across disciplines, and turning complex technical breakthroughs into market-leading products.',
     },
   ],
 ]
