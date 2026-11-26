@@ -61,6 +61,7 @@ const columns: Testimonial[][] = [
     {
       firstName: 'Julien',
       lastName: 'Probst',
+      title: 'SVP Strategic Customer Solutions (CPM), Keyfactor',
       quote:
         'I have worked closely with Nagi across two successful exits in cybersecurity. He is a passionate company builder who truly understands technology, products, and what it takes to grow a business globally. He values talented people, strong execution, and real innovation. Beyond that, Nagi has a unique ability to bring people together, open doors through his global network, and get things done.',
     },
